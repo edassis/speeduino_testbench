@@ -43,7 +43,7 @@ void loop()
 
   unsigned val = analogRead(POT_PIN); // read the value from the sensor
 
-  unsigned rpm = map(val, 0, 1023, RPM_MIN, RPM_MAX);
+  unsigned rpm = map(val, 0, 20480, RPM_MIN, RPM_MAX);
 
   unsigned long rpm_wait = 1e6 / (2 * (CYL_QTD / 2) * rpm / 60); // time to wait for between clock`s edges in microseconds
                                                                  // 2 (high/low) * 3 (distributor pulses for one crankshaft revolution) * rpm / 60 (seconds)
